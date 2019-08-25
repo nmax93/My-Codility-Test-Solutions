@@ -24,7 +24,7 @@ class Solution {
         }
         
         if (numberOfPeeks < 3) return numberOfPeeks;
-        
+        //THIS IS THE KEY TO THE SOLUTION
         firstLastPeeksDistance = lastPeek - firstPeek + 1;
         rootFloor = (int)Math.sqrt(firstLastPeeksDistance);
         
@@ -35,7 +35,7 @@ class Solution {
         }
         
         if (numberOfPeeks < maxNumberOfFlags) maxNumberOfFlags = numberOfPeeks;
-        
+        //
         for(int i = 2; i <= maxNumberOfFlags; i++) {
             lastVisitedPeek = firstPeek;
             curNumOfFlags = 1;
