@@ -5,46 +5,46 @@ class Solution {
         
         if (A.length < 3) return 0;
         
-        int[] peeks = new int[A.length];
-        int firstPeek = -1, lastPeek = -1, numberOfPeeks = 0, firstLastPeeksDistance;
-        int rootFloor, maxNumberOfFlags, flags, lastVisitedPeek, distanceFromLastVisitedPeek;
+        int[] peaks = new int[A.length];
+        int firstPeak = -1, lastPeak = -1, numberOfPeaks = 0, firstLastPeaksDistance;
+        int rootFloor, maxNumberOfFlags, flags, lastVisitedPeak, distanceFromLastVisitedPeak;
         int curNumOfFlags, bestSoFarNumOfFlags = 0;
         
         for(int i = 1; i < A.length - 1; i++) {
             if (A[i] > A[i - 1] && A[i] > A[i + 1]) {
-                if (firstPeek == -1) {
-                    firstPeek = lastPeek = i;
+                if (firstPeak == -1) {
+                    firstPeak = lastPeak = i;
                 } else {
-                    lastPeek = i;
+                    lastPeak = i;
                 }
-                peeks[i]++;
-                numberOfPeeks++;
+                peaks[i]++;
+                numberOfPeaks++;
                 i++;
             }
         }
         
-        if (numberOfPeeks < 3) return numberOfPeeks;
-        //THIS IS THE KEY TO THE SOLUTION
-        firstLastPeeksDistance = lastPeek - firstPeek + 1;
-        rootFloor = (int)Math.sqrt(firstLastPeeksDistance);
+        if (numberOfPeaks < 3) return numberOfPeaks;
         
-        if (rootFloor * (rootFloor + 1) < firstLastPeeksDistance) {
+        firstLastPeaksDistance = lastPeak - firstPeak + 1;
+        rootFloor = (int)Math.sqrt(firstLastPeaksDistance);
+        
+        if (rootFloor * (rootFloor + 1) < firstLastPeaksDistance) {
             maxNumberOfFlags = rootFloor + 1;
         } else {
             maxNumberOfFlags = rootFloor;
         }
         
-        if (numberOfPeeks < maxNumberOfFlags) maxNumberOfFlags = numberOfPeeks;
-        //
+        if (numberOfPeaks < maxNumberOfFlags) maxNumberOfFlags = numberOfPeaks;
+        
         for(int i = 2; i <= maxNumberOfFlags; i++) {
-            lastVisitedPeek = firstPeek;
+            lastVisitedPeak = firstPeak;
             curNumOfFlags = 1;
-            distanceFromLastVisitedPeek = i - 1;
-            for(int j = firstPeek + i; j < peeks.length - 1; j++) {
-                distanceFromLastVisitedPeek++;
-                if (peeks[j] == 1 && distanceFromLastVisitedPeek >= i) {
+            distanceFromLastVisitedPeak = i - 1;
+            for(int j = firstPeak + i; j < peaks.length - 1; j++) {
+                distanceFromLastVisitedPeak++;
+                if (peaks[j] == 1 && distanceFromLastVisitedPeak >= i) {
                     curNumOfFlags++;
-                    distanceFromLastVisitedPeek = i - 1;
+                    distanceFromLastVisitedPeak = i - 1;
                     j += i - 1;
                 }
                 if (curNumOfFlags == i) break;
