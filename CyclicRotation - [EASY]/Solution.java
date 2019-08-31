@@ -9,9 +9,9 @@ class Solution {
         
         int[] resultArray = new int[A.length];
     
-        for(i = 0, j = rotations; i < A.length; i++, j++) {
-            
-            if (j == A.length) j = 0;
+        for(i = 0, j = rotations; i < A.length; i++, j++) {      
+            if (j == A.length)
+                j = 0;
             resultArray[j] = A[i];
         }
         
