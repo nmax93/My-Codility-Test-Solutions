@@ -15,7 +15,7 @@ For example, given array H containing N = 9 integers:
   H[6] = 7    H[7] = 4    H[8] = 8  
 the function should return 7. The figure shows one possible arrangement of seven blocks.  
 
-![Alt text](Desktop/walls.png?raw=true "Title")
+<img src="Desktop/walls.png" width="350">
 
 Write an efficient algorithm for the following assumptions:  
   
