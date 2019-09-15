@@ -17,7 +17,7 @@ class Solution {
             if (S[i] == '(') {
                 stack.Push(S[i]);
             } else {
-                if (stack.Count == 0 || stack.Peek() != '(') {
+                if (stack.Count == 0) {
                     return 0;
                 }
                 stack.Pop();
