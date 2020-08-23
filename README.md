@@ -1,5 +1,5 @@
 # My-Codility-Test-Solutions
-my Codility tasks solutions.  
+my Codility tests solutions.  
 name and deficullty are specified in title  
 description of the task and it's solution are inside the folder  
   
