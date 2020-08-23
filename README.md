@@ -1,7 +1,7 @@
 # My-Codility-Test-Solutions
 my Codility tests solutions.  
-name and deficullty are specified in title  
-description of the task and it's solution are inside the folder  
+name and difficulty are specified in title  
+description of the test and it's solution are inside the folder  
   
 *ALL SOLUTIONS ARE 100% MINE*
 
